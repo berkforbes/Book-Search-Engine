@@ -31,10 +31,6 @@ const SignupForm = () => {
     }
 
     try {
-      // const response = await createUser(userFormData);
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
 
       // execute addUser mutation and pass in variable data from form
       const { data } = await addUser({
@@ -42,8 +38,6 @@ const SignupForm = () => {
       });
       console.log(data);
       Auth.login(data.addUser.token);
-      // const { token, user } = await response.json();
-      // Auth.login(token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
